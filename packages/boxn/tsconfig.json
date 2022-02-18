@@ -3,8 +3,6 @@
     "compilerOptions": {
         "target": "es2018",
         "lib": [
-            "dom",
-            "dom.iterable",
             "esnext"
         ],
         "allowJs": true,
@@ -19,7 +17,6 @@
         "emitDecoratorMetadata": true
     },
     "include": [
-        "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx"
     ],

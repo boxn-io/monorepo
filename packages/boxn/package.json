@@ -1,0 +1,12 @@
+{
+  "name": "@boxn-io/boxn",
+  "version": "1.0.0",
+  "description": "The boxn graphql api",
+  "main": "lib/index.js",
+  "repository": "https://github.com/boxn-io/monorepo.git",
+  "author": "Solidarity Software Inc",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {},
+  "devDependencies": {}
+}
