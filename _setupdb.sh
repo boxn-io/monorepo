@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-pg_ctlcluster 14 main status
+pg_ctlcluster 14 main start
 createuser $1
 createdb boxndb -O $1
 
