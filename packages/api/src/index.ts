@@ -11,6 +11,7 @@ async function bootstrap() {
 
   const server = new ApolloServer({
     schema,
+    cors: true,
   })
 
   const { url } = await server.listen(PORT)
