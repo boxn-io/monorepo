@@ -7,6 +7,9 @@
   "author": "Solidarity Software Inc",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "start": "node lib/index.js"
+  },
   "dependencies": {
     "apollo-server": "^3.6.3",
     "class-validator": "^0.13.2",
