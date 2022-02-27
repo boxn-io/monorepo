@@ -1,0 +1,7 @@
+[profile default]
+sso_start_url = https://d-9a6715a44d.awsapps.com/start
+sso_region = us-east-2
+sso_account_id = 676049903221
+sso_role_name = admin
+region = us-west-2
+output = json
