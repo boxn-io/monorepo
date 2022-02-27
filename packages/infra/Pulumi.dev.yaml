@@ -1,0 +1,6 @@
+secretsprovider: awskms://alias/stack-encryption-key-e230adc?region=us-west-2
+encryptedkey: AQICAHiS55U6Fn39x5qTBz1PCjupzKM6JJdCc7CnYjmvBxMQ6AEzhUD8YZsKneVDTHM1ugq8AAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMrdCacxByPaWDUGQTAgEQgDvyO9zvI8dE4D+B16qhibNx+bY4mFz74uB81wt+mDwY+6GDDCCmNlSGjxXo9pB+2nmz1EM2w1HcMhlWBw==
+config:
+  aws:region: us-west-2
+  boxn-io-infra:accountID: "676049903221"
+  boxn-io-infra:iamRole: arn:aws:iam::676049903221:role/aws-reserved/sso.amazonaws.com/us-east-2/AWSReservedSSO_admin_c55347830df8e9de

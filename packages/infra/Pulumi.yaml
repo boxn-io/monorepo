@@ -1,0 +1,3 @@
+name: boxn-io-infra
+runtime: nodejs
+description: Pulumi program for boxn
