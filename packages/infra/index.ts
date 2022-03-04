@@ -4,7 +4,7 @@ import * as aws from "@pulumi/aws";
 const config = new pulumi.Config();
 const iamRole = config.require("iamRole");
 const accountID = config.require("accountID");
-
+const mattermostDbPassword = config.requireSecret("mattermostDbPassword");
 
 const keyPolicy = {
     Version: "2012-10-17",
@@ -48,3 +48,17 @@ const alias = new aws.kms.Alias("alias/stack-encryption-key", {
 // Export the arns
 export const keyArn = key.arn
 export const aliasArn = alias.arn
+
+const postgresql = new aws.rds.Instance("default", {
+    allocatedStorage: 10,
+    engine: "postgres",
+    engineVersion: "14.1",
+    instanceClass: "db.t3.micro",
+    name: "mattermost",
+    password: mattermostDbPassword,
+    skipFinalSnapshot: true,
+    username: "mattermost",
+});
+
+export const mattermostDbArn = postgresql.arn
+export const mattermostDbEndpoint = postgresql.endpoint
