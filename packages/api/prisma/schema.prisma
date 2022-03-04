@@ -12,59 +12,59 @@ datasource db {
 
 // This is an enviromnet like prod/test/staging
 model Environment {
-  id       Int       @id @default(autoincrement())
+  id       String    @id @default(uuid())
   services Service[]
 }
 
 // How to build the container
 model BuildFactory {
-  id           Int        @id @default(autoincrement())
+  id           String     @id @default(uuid())
   repository   Repository @relation(fields: [repositoryId], references: [id])
-  repositoryId Int
+  repositoryId String
 
   builds Build[]
 }
 
 // Credentials to get into a repository
 model Repository {
-  id                 Int            @id @default(autoincrement())
+  id                 String         @id @default(uuid())
   buildConfiguration BuildFactory[]
 }
 
 // A particular container build
 model Build {
-  id                   Int          @id @default(autoincrement())
+  id                   String       @id @default(uuid())
   buildConfiguration   BuildFactory @relation(fields: [buildConfigurationId], references: [id])
-  buildConfigurationId Int
+  buildConfigurationId String
 }
 
 // Configuration for making deployments
 model DeploymentFactory {
-  id          Int          @id @default(autoincrement())
+  id          String       @id @default(uuid())
   deployments Deployment[]
   Service     Service      @relation(fields: [serviceId], references: [id])
-  serviceId   Int
+  serviceId   String
 }
 
 // a build, deployed to a particular environment
 model Deployment {
-  id                  Int               @id @default(autoincrement())
+  id                  String            @id @default(uuid())
   service             Service           @relation(fields: [serviceId], references: [id])
-  serviceId           Int
+  serviceId           String
   DeploymentFactory   DeploymentFactory @relation(fields: [deploymentFactoryId], references: [id])
-  deploymentFactoryId Int
+  deploymentFactoryId String
 }
 
 // Represents a particular service in a particular environment
 model Service {
-  id                  Int                 @id @default(autoincrement())
+  id                  String              @id @default(uuid())
   deployments         Deployment[]
   environment         Environment         @relation(fields: [environmentId], references: [id])
-  environmentId       Int
+  environmentId       String
   deploymentFactories DeploymentFactory[]
 }
 
 // Model the idea of databases for migrations
 model Database {
-  id Int @id @default(autoincrement())
+  id String @id @default(uuid())
 }

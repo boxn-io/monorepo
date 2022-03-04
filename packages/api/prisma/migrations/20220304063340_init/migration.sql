@@ -1,61 +1,61 @@
 -- CreateTable
 CREATE TABLE "Environment" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
 
     CONSTRAINT "Environment_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "BuildFactory" (
-    "id" SERIAL NOT NULL,
-    "repositoryId" INTEGER NOT NULL,
+    "id" TEXT NOT NULL,
+    "repositoryId" TEXT NOT NULL,
 
     CONSTRAINT "BuildFactory_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Repository" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
 
     CONSTRAINT "Repository_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Build" (
-    "id" SERIAL NOT NULL,
-    "buildConfigurationId" INTEGER NOT NULL,
+    "id" TEXT NOT NULL,
+    "buildConfigurationId" TEXT NOT NULL,
 
     CONSTRAINT "Build_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "DeploymentFactory" (
-    "id" SERIAL NOT NULL,
-    "serviceId" INTEGER NOT NULL,
+    "id" TEXT NOT NULL,
+    "serviceId" TEXT NOT NULL,
 
     CONSTRAINT "DeploymentFactory_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Deployment" (
-    "id" SERIAL NOT NULL,
-    "serviceId" INTEGER NOT NULL,
-    "deploymentFactoryId" INTEGER NOT NULL,
+    "id" TEXT NOT NULL,
+    "serviceId" TEXT NOT NULL,
+    "deploymentFactoryId" TEXT NOT NULL,
 
     CONSTRAINT "Deployment_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Service" (
-    "id" SERIAL NOT NULL,
-    "environmentId" INTEGER NOT NULL,
+    "id" TEXT NOT NULL,
+    "environmentId" TEXT NOT NULL,
 
     CONSTRAINT "Service_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Database" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
 
     CONSTRAINT "Database_pkey" PRIMARY KEY ("id")
 );
