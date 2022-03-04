@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 pg_ctlcluster 14 main start
-createuser $1
+createuser $1 -d
 createdb boxndb -O $1
 
 IFS= read -s  -p Password: pwd
