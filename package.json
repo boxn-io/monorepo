@@ -20,7 +20,8 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "watch": "tsc -b --watch"
+    "watch": "tsc -b --watch",
+    "app:dev": "cd packages/app && yarn dev"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
